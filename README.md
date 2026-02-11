@@ -22,6 +22,8 @@ A smart web-based platform developed to manage campus activities efficiently.
 
 ## Project Structure
 SMART-CAMPUS-MANAGEMENT-SYSTEM
+
+```text
 │
 ├── frontend/
 │   │
@@ -164,7 +166,7 @@ SMART-CAMPUS-MANAGEMENT-SYSTEM
 │   └── README.md
 │
 └── README.md
-
+```
 
 ## Developer
 **Shiv Koli**  
