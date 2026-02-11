@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Complaint FAQs</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --cream:#f9f7f3;
+  --navy:#0b1c2d;
+  --gold:#c9a227;
+}
+
+body{
+  background:var(--cream);
+  font-family:'Segoe UI', sans-serif;
+}
+
+.navbar{
+  background:var(--navy);
+}
+
+.back-btn{
+  background:var(--gold);
+  color:#000;
+  padding:6px 16px;
+  border-radius:20px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.faq-card{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.accordion-button{
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span class="text-white fs-5">
+      <i class="fa-solid fa-circle-question me-2"></i>Complaint FAQs
+    </span>
+    <a href="student-complaint-home.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+
+      <div class="faq-card">
+
+        <h4 class="text-center mb-4">Frequently Asked Questions</h4>
+
+        <div class="accordion" id="faqAccordion">
+
+          <!-- Q1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button"
+                data-bs-toggle="collapse" data-bs-target="#q1">
+                How can I file a complaint?
+              </button>
+            </h2>
+            <div id="q1" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                You can file a complaint by selecting the "File Complaint" option
+                from the student complaint dashboard and filling in the required details.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#q2">
+                Can I submit a complaint anonymously?
+              </button>
+            </h2>
+            <div id="q2" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Yes, the system allows anonymous complaints where only the University ID
+                and complaint details are required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#q3">
+                How do I track my complaint status?
+              </button>
+            </h2>
+            <div id="q3" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                You can track your complaint by entering your roll number
+                in the "Track Complaint" section of the portal.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#q4">
+                What are the different complaint statuses?
+              </button>
+            </h2>
+            <div id="q4" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Complaints can have three statuses:
+                <ul>
+                  <li><strong>Not Viewed</strong> – Complaint not yet reviewed</li>
+                  <li><strong>In Progress</strong> – Complaint is being addressed</li>
+                  <li><strong>Solved</strong> – Issue has been resolved</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#q5">
+                Who reviews the complaints?
+              </button>
+            </h2>
+            <div id="q5" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Complaints are reviewed by authorized administrators and concerned
+                department authorities to ensure timely resolution.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#q6">
+                How long does it take to resolve a complaint?
+              </button>
+            </h2>
+            <div id="q6" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Resolution time depends on the nature of the complaint.
+                Most issues are addressed within a few working days.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

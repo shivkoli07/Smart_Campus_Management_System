@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Departments | BVCOE Navi Mumbai</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --bg-main:#f9f7f3;
+  --bg-card:#ffffff;
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+  --accent:#c9a227;
+  --text-main:#1f2937;
+  --text-muted:#6b7280;
+}
+
+body{
+  background:var(--bg-main);
+  font-family:'Segoe UI', sans-serif;
+}
+
+/* Section Title */
+.section-title{
+  text-align:center;
+  font-weight:700;
+  font-size:30px;
+  color:var(--navy);
+  margin-bottom:40px;
+}
+
+/* Department Card */
+.dept-card{
+  background:var(--bg-card);
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+  height:100%;
+}
+
+.dept-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.15);
+}
+
+.dept-icon{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  margin-bottom:15px;
+}
+
+.dept-card h5{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.dept-info{
+  font-size:14px;
+  color:var(--text-muted);
+}
+
+.dept-info ul{
+  padding-left:20px;
+  margin-bottom:10px;
+}
+
+.badge-custom{
+  background:var(--navy-light);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" style="background:var(--navy);">
+  <div class="container d-flex justify-content-between align-items-center">
+    
+    <a class="navbar-brand text-white" href="../index.html">
+      <i class="fa-solid fa-building-columns me-2"></i>Departments
+    </a>
+
+    <!-- BACK BUTTON -->
+    <a href="../index.html" class="btn btn-outline-light">
+      <i class="fa-solid fa-arrow-left me-1"></i> Back
+    </a>
+
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="container my-5">
+  <h2 class="section-title">Academic Departments</h2>
+  <p class="text-center text-muted">
+    Bharati Vidyapeeth College of Engineering, Navi Mumbai offers
+    undergraduate engineering programs with strong academic foundation,
+    experienced faculty, and modern laboratories.
+  </p>
+</div>
+
+<!-- DEPARTMENTS -->
+<div class="container mb-5">
+  <div class="row g-4">
+
+    <!-- INFORMATION TECHNOLOGY -->
+    <div class="col-md-6 col-lg-4">
+      <div class="dept-card">
+        <div class="dept-icon"><i class="fa-solid fa-network-wired"></i></div>
+        <h5>Information Technology</h5>
+
+        <p class="dept-info">
+          Emphasizes networking, cloud computing, cybersecurity,
+          data analytics, and enterprise systems.
+        </p>
+
+        <div class="dept-info">
+          <strong>HOD:</strong> Ms. Sonali Narayan Mhatre
+        </div>
+
+        <div class="dept-info">
+          <strong>Faculty:</strong>
+          <ul>
+            <li>Dr. Sanjay Shahaji Kadam</li>
+            <li>Mr. Hanamant Bhagwan Sale</li>
+            <li>Ms. Bhawana Sahebrao Dakhare</li>
+            <li>Ms. Archana Sandip Chavan</li>
+            <li>Mr. Hitendra Ashok Chavan</li>
+            <li>Mr. Vaibhav Eknath Pawar</li>
+            <li>Ms. Jayshri C. Wagh</li>
+          </ul>
+        </div>
+
+        <div class="dept-info">
+          <strong>Labs:</strong> Network Lab, Computer Lab, UNIX Lab
+        </div>
+
+        <span class="badge badge-custom text-white">UG Program</span>
+      </div>
+    </div>
+
+    <!-- COMPUTER ENGINEERING -->
+    <div class="col-md-6 col-lg-4">
+      <div class="dept-card">
+        <div class="dept-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h5>Computer Engineering</h5>
+
+        <p class="dept-info">
+          Focuses on software development, data structures, AI, ML,
+          databases, operating systems, and web technologies.
+        </p>
+
+        <div class="dept-info">
+          <strong>HOD:</strong> Dr.D.R.Ingle
+        </div>
+
+        <div class="dept-info">
+          <strong>Faculty:</strong>
+          <ul>
+            <li>Prof. Kanchan Doke</li>
+            <li>Prof. S. B. Chavan</li>
+            <li>Dr. Sulakshana Mane</li>
+            <li>Prof. Madhuri Ghuge</li>
+            <li>Prof. Ravindra Ghugare</li>
+          </ul>
+        </div>
+
+        <div class="dept-info">
+          <strong>Labs:</strong> Programming Lab, DBMS Lab, AI Lab
+        </div>
+
+        <span class="badge badge-custom text-white">UG Program</span>
+      </div>
+    </div>
+
+    <!-- MECHANICAL -->
+    <div class="col-md-6 col-lg-4">
+      <div class="dept-card">
+        <div class="dept-icon"><i class="fa-solid fa-gears"></i></div>
+        <h5>Mechanical Engineering</h5>
+
+        <p class="dept-info">
+          Covers design, manufacturing, thermal engineering,
+          CAD/CAM, and industrial engineering.
+        </p>
+
+        <div class="dept-info">
+          <strong>HOD:</strong> Dr. Ajay S. Bhongade
+        </div>
+
+        <div class="dept-info">
+          <strong>Faculty:</strong>
+          <ul>
+            <li>Dr. Sandhya Jadhav</li>
+            <li>Dr. Sandip Subrao Kanase</li>
+            <li>Dr. Shivgond Nagappa Teli</li>
+            <li>Dr. Manoj Nikam</li>
+            <li>Jaydeep Patil</li>
+          </ul>
+        </div>
+
+        <div class="dept-info">
+          <strong>Labs:</strong> Thermodynamics Lab, Machine Shop
+        </div>
+
+        <span class="badge badge-custom text-white">UG Program</span>
+      </div>
+    </div>
+
+    <!-- EXTC -->
+    <div class="col-md-6 col-lg-4">
+      <div class="dept-card">
+        <div class="dept-icon"><i class="fa-solid fa-broadcast-tower"></i></div>
+        <h5>Electronics & Telecommunication</h5>
+
+        <p class="dept-info">
+          Focuses on communication systems, embedded systems,
+          VLSI, signal processing, and IoT.
+        </p>
+
+        <div class="dept-info">
+          <strong>HOD:</strong> Dr. P. A. Kharade
+        </div>
+
+        <div class="dept-info">
+          <strong>Faculty:</strong>
+          <ul>
+            <li>Dr. G. Borkhade</li>
+            <li>Dr. A. H. Sale</li>
+            <li>Prof. M. M. Bulhe</li>
+            <li>Prof. S. R. Wategaonkar</li>
+            <li>Prof. S. M. Mane</li>
+          </ul>
+        </div>
+
+        <div class="dept-info">
+          <strong>Labs:</strong> Communication Lab, VLSI Lab
+        </div>
+
+        <span class="badge badge-custom text-white">UG Program</span>
+      </div>
+    </div>
+
+    <!-- INSTRUMENTATION -->
+    <div class="col-md-6 col-lg-4">
+      <div class="dept-card">
+        <div class="dept-icon"><i class="fa-solid fa-microchip"></i></div>
+        <h5>Instrumentation Engineering</h5>
+
+        <p class="dept-info">
+          Deals with sensors, control systems, automation,
+          industrial instrumentation, and robotics.
+        </p>
+
+        <div class="dept-info">
+          <strong>HOD:</strong> Prof. D. N. Pawar
+        </div>
+
+        <div class="dept-info">
+          <strong>Faculty:</strong>
+          <ul>
+            <li>Dr. S. D. Wankhede</li>
+            <li>Dr. P. V. Bhosale</li>
+            <li>Prof. J. B. Mandhare</li>
+            <li>Prof. M. M. Sawarkar</li>
+            <li>Dr.  J. K. Deshmukh</li>
+          </ul>
+        </div>
+
+        <div class="dept-info">
+          <strong>Labs:</strong> Control System Lab, Sensor Lab
+        </div>
+
+        <span class="badge badge-custom text-white">UG Program</span>
+      </div>
+    </div>
+
+    <!-- APPLIED SCIENCES -->
+    <div class="col-md-6 col-lg-4">
+      <div class="dept-card">
+        <div class="dept-icon"><i class="fa-solid fa-flask"></i></div>
+        <h5>Applied Sciences & Humanities</h5>
+
+        <p class="dept-info">
+          Provides strong foundation in Mathematics, Physics,
+          Chemistry, Communication Skills, and Engineering Ethics.
+        </p>
+
+        <div class="dept-info">
+          <strong>HOD:</strong> Dr. J. J. Kadam
+        </div>
+
+        <div class="dept-info">
+          <strong>Faculty:</strong>
+          <ul>
+            <li>Dr.Shwetamabri Waghmare</li>
+            <li>Dr.Vaishali Agme</li>
+            <li>Dr.Swati Mamgin</li>
+            <li>Dr.Bhavna.R.Singh</li>
+            <li>Prof.Mahadev.R.Jadhav</li>
+          </ul>
+        </div>
+
+        <div class="dept-info">
+          <strong>Labs:</strong> Physics,Chemistry,Maths Labs
+        </div>
+
+        <span class="badge badge-custom text-white">Foundation Dept</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-3" style="background:var(--navy);color:white;">
+  © 2026 Bharati Vidyapeeth College of Engineering, Navi Mumbai
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Attendance Panel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#f9f7f3;
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+}
+
+body{
+  background:var(--cream);
+  font-family:'Segoe UI', sans-serif;
+}
+
+/* Header */
+.page-header{
+  position:relative;
+  margin-bottom:20px;
+}
+
+/* Back Button */
+.back-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  background:var(--navy);
+  color:white;
+  padding:6px 16px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.back-btn:hover{
+  background:var(--navy-light);
+  color:white;
+}
+
+/* Card Wrapper */
+.attendance-card{
+  background:white;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Table */
+.table thead{
+  background:var(--navy);
+  color:white;
+}
+
+.table td, .table th{
+  vertical-align:middle;
+  text-align:center;
+}
+
+/* Submit Button */
+.btn-submit{
+  background:var(--navy);
+  color:white;
+  font-weight:600;
+}
+
+.btn-submit:hover{
+  background:var(--navy-light);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container my-4">
+
+  <!-- Header -->
+  <div class="page-header text-center">
+    <h3 class="fw-bold text-dark">Admin Attendance Panel</h3>
+    <a href="attendance-role.html" class="back-btn">← Back</a>
+  </div>
+
+  <!-- Attendance Card -->
+  <div class="attendance-card">
+
+    <input type="date" id="attendanceDate" class="form-control mb-3">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Maths IV</th>
+          <th>OS</th>
+          <th>CN</th>
+          <th>Open Elective</th>
+        </tr>
+      </thead>
+      <tbody>
+  <!-- Student 1 -->
+  <tr>
+    <td>01</td>
+    <td>Shiv</td>
+    <td>
+      <input type="radio" name="m01" value="P" checked> P
+      <input type="radio" name="m01" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o01" value="P" checked> P
+      <input type="radio" name="o01" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c01" value="P" checked> P
+      <input type="radio" name="c01" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e01" value="P" checked> P
+      <input type="radio" name="e01" value="A"> A
+    </td>
+  </tr>
+
+  <!-- Student 2 -->
+  <tr>
+    <td>02</td>
+    <td>Akanksha</td>
+    <td>
+      <input type="radio" name="m02" value="P" checked> P
+      <input type="radio" name="m02" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o02" value="P" checked> P
+      <input type="radio" name="o02" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c02" value="P" checked> P
+      <input type="radio" name="c02" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e02" value="P" checked> P
+      <input type="radio" name="e02" value="A"> A
+    </td>
+  </tr>
+
+  <!-- Student 3 -->
+  <tr>
+    <td>03</td>
+    <td>Kartiki</td>
+    <td>
+      <input type="radio" name="m03" value="P" checked> P
+      <input type="radio" name="m03" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o03" value="P" checked> P
+      <input type="radio" name="o03" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c03" value="P" checked> P
+      <input type="radio" name="c03" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e03" value="P" checked> P
+      <input type="radio" name="e03" value="A"> A
+    </td>
+  </tr>
+
+  <!-- Student 4 -->
+  <tr>
+    <td>04</td>
+    <td>Tanishka</td>
+    <td>
+      <input type="radio" name="m04" value="P" checked> P
+      <input type="radio" name="m04" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o04" value="P" checked> P
+      <input type="radio" name="o04" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c04" value="P" checked> P
+      <input type="radio" name="c04" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e04" value="P" checked> P
+      <input type="radio" name="e04" value="A"> A
+    </td>
+  </tr>
+
+ <!-- Student 5 -->
+  <tr>
+    <td>05</td>
+    <td>Sahil</td>
+    <td>
+      <input type="radio" name="m05" value="P" checked> P
+      <input type="radio" name="m05" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o05" value="P" checked> P
+      <input type="radio" name="o05" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c05" value="P" checked> P
+      <input type="radio" name="c05" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e05" value="P" checked> P
+      <input type="radio" name="e05" value="A"> A
+    </td>
+  </tr>
+
+  <!-- Student 6 -->
+  <tr>
+    <td>06</td>
+    <td>Karan</td>
+    <td>
+      <input type="radio" name="m06" value="P" checked> P
+      <input type="radio" name="m06" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o06" value="P" checked> P
+      <input type="radio" name="o06" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c06" value="P" checked> P
+      <input type="radio" name="c06" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e06" value="P" checked> P
+      <input type="radio" name="e06" value="A"> A
+    </td>
+  </tr>
+
+  <!-- Student 7 -->
+  <tr>
+    <td>07</td>
+    <td>Pradnya</td>
+    <td>
+      <input type="radio" name="m07" value="P" checked> P
+      <input type="radio" name="m07" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o07" value="P" checked> P
+      <input type="radio" name="o07" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c07" value="P" checked> P
+      <input type="radio" name="c07" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e07" value="P" checked> P
+      <input type="radio" name="e07" value="A"> A
+    </td>
+  </tr>
+
+  <!-- Student 8 -->
+  <tr>
+    <td>08</td>
+    <td>Surbhi</td>
+    <td>
+      <input type="radio" name="m08" value="P" checked> P
+      <input type="radio" name="m08" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="o08" value="P" checked> P
+      <input type="radio" name="o08" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="c08" value="P" checked> P
+      <input type="radio" name="c08" value="A"> A
+    </td>
+    <td>
+      <input type="radio" name="e08" value="P" checked> P
+      <input type="radio" name="e08" value="A"> A
+    </td>
+  </tr>
+</tbody>
+
+    </table>
+
+    <button class="btn btn-submit w-100" onclick="submitAttendance()">Submit Attendance</button>
+
+  </div>
+</div>
+
+<script>
+function submitAttendance(){
+  const date = document.getElementById("attendanceDate").value;
+  if(!date) return alert("Select date");
+
+  const rows = document.querySelectorAll("tbody tr");
+  const data = [];
+
+  rows.forEach(row=>{
+    const rollNo = row.cells[0].innerText;
+    const name = row.cells[1].innerText;
+
+    data.push({
+      rollNo,
+      name,
+      mathsIV: document.querySelector(`input[name="m${rollNo}"]:checked`).value,
+      os: document.querySelector(`input[name="o${rollNo}"]:checked`).value,
+      cn: document.querySelector(`input[name="c${rollNo}"]:checked`).value,
+      openElective: document.querySelector(`input[name="e${rollNo}"]:checked`).value,
+      date
+    });
+  });
+
+  fetch("http://localhost:8080/api/attendance",{
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(res=>res.text())
+  .then(msg=>alert(msg))
+  .catch(()=>alert("Server error"));
+}
+</script>
+
+</body>
+</html>

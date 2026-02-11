@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Complaint Admin Panel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#f9f7f3;
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+  --gold:#c9a227;
+  --text-muted:#6b7280;
+}
+
+body{
+  background:var(--cream);
+  font-family:'Segoe UI', sans-serif;
+}
+
+/* Header */
+.page-header{
+  position:relative;
+  margin-bottom:30px;
+}
+
+/* Back Button */
+.back-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  background:var(--navy);
+  color:white;
+  padding:6px 18px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.back-btn:hover{
+  background:var(--navy-light);
+  color:white;
+}
+
+/* Complaint Card */
+.complaint-card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  border-left:5px solid var(--navy);
+}
+
+/* Status Badge */
+.status{
+  font-weight:600;
+  padding:4px 10px;
+  border-radius:12px;
+  display:inline-block;
+}
+
+.status.PENDING{ background:#fde68a; color:#92400e; }
+.status.IN_PROGRESS{ background:#bfdbfe; color:#1e40af; }
+.status.SOLVED{ background:#bbf7d0; color:#065f46; }
+
+/* Buttons */
+.btn-progress{
+  background:#f59e0b;
+  border:none;
+  color:white;
+  font-weight:600;
+}
+
+.btn-progress:hover{
+  background:#d97706;
+}
+
+.btn-solved{
+  background:#16a34a;
+  border:none;
+  color:white;
+  font-weight:600;
+}
+
+.btn-solved:hover{
+  background:#15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container my-5">
+
+  <!-- Header -->
+  <div class="page-header text-center">
+    <h3 class="fw-bold" style="color:var(--navy)">Admin Complaint Panel</h3>
+    <a href="complaint-role.html" class="back-btn">← Back</a>
+  </div>
+
+  <!-- Complaints -->
+  <div id="complaints"></div>
+</div>
+
+<script>
+function loadComplaints(){
+  fetch("http://localhost:8080/api/complaints/all")
+  .then(res => res.json())
+  .then(data => {
+    let html = "";
+    data.forEach(c => {
+      html += `
+      <div class="complaint-card mb-4">
+        <p><b>Category:</b> ${c.category}</p>
+        <p><b>Description:</b> ${c.description}</p>
+        <p><b>Student:</b> ${c.studentName ?? "Anonymous"}</p>
+        <p>
+          <b>Status:</b>
+          <span class="status ${c.status}">${c.status}</span>
+        </p>
+
+        <button class="btn btn-progress btn-sm me-2"
+          onclick="updateStatus(${c.id}, 'IN_PROGRESS')">
+          In Progress
+        </button>
+
+        <button class="btn btn-solved btn-sm"
+          onclick="updateStatus(${c.id}, 'SOLVED')">
+          Solved
+        </button>
+      </div>`;
+    });
+    document.getElementById("complaints").innerHTML = html;
+  });
+}
+
+function updateStatus(id, status){
+  fetch(`http://localhost:8080/api/complaints/update-status/${id}?status=${status}`, {
+    method:"PUT"
+  }).then(() => loadComplaints());
+}
+
+loadComplaints();
+</script>
+
+</body>
+</html>

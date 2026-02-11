@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>View Leave Status</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --cream:#f9f7f3;
+  --navy:#1e3a8a;
+}
+
+body{
+  background: linear-gradient(135deg, var(--cream), #eef2f7);
+}
+
+/* Card */
+.status-card{
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Header */
+.card-header-custom{
+  background: var(--navy);
+  color: white;
+  padding: 15px;
+}
+
+/* Back button */
+.back-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Inputs */
+.form-control{
+  border-radius: 10px;
+}
+
+/* Status badge colors */
+.status-APPROVED{ color: green; }
+.status-PENDING{ color: orange; }
+.status-REJECTED{ color: red; }
+</style>
+</head>
+
+<body>
+
+<!-- Back Button -->
+<div class="back-btn">
+  <button class="btn btn-outline-dark btn-sm"
+    onclick="window.location.href='leave-role.html'">
+    <i class="fa-solid fa-arrow-left me-1"></i> Back
+  </button>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="card status-card shadow-lg mx-auto" style="max-width: 520px;">
+
+    <!-- Header -->
+    <div class="card-header-custom text-center">
+      <h4 class="mb-0">
+        <i class="fa-solid fa-magnifying-glass me-2"></i>Track Leave Status
+      </h4>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body p-4">
+
+      <input id="rollNo" class="form-control mb-3"
+        placeholder="Enter Roll Number">
+
+      <button class="btn w-100 text-white"
+        style="background:var(--navy)"
+        onclick="track()">
+        <i class="fa-solid fa-search me-2"></i>Check Status
+      </button>
+
+      <div id="result" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function track() {
+  const rollNo = document.getElementById("rollNo").value;
+
+  fetch(`http://localhost:8080/api/leave/student/${rollNo}`)
+    .then(res => res.json())
+    .then(data => {
+
+      if (data.length === 0) {
+        document.getElementById("result").innerHTML =
+          "<p class='text-danger text-center fw-semibold'>No leave record found</p>";
+        return;
+      }
+
+      let html = "";
+      data.forEach(l => {
+        html += `
+          <div class="border rounded p-3 mb-3 shadow-sm">
+            <b>Type:</b> ${l.leaveType}<br>
+            <b>Dates:</b> ${l.fromDate} → ${l.toDate}<br>
+            <b>Status:</b>
+            <span class="fw-bold status-${l.status}">
+              ${l.status}
+            </span>
+          </div>
+        `;
+      });
+
+      document.getElementById("result").innerHTML = html;
+    });
+}
+</script>
+
+</body>
+</html>

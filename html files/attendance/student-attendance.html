@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Attendance</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+  --cream:#f9f7f3;
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+}
+
+body{
+  background:var(--cream);
+  font-family:'Segoe UI', sans-serif;
+}
+
+.page-header{
+  position:relative;
+  margin-bottom:25px;
+}
+
+.back-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  background:var(--navy);
+  color:white;
+  padding:6px 16px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.back-btn:hover{
+  background:var(--navy-light);
+  color:white;
+}
+
+.attendance-card{
+  background:white;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.btn-view{
+  background:var(--navy);
+  color:white;
+  font-weight:600;
+}
+
+.btn-view:hover{
+  background:var(--navy-light);
+}
+
+.table thead{
+  background:var(--navy);
+  color:white;
+}
+
+.table td, .table th{
+  text-align:center;
+  vertical-align:middle;
+}
+
+.student-info{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.attendance-percent{
+  font-size:18px;
+  font-weight:700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container my-5">
+
+  <div class="page-header text-center">
+    <h3 class="fw-bold">Student Attendance</h3>
+    <a href="attendance-role.html" class="back-btn">← Back</a>
+  </div>
+
+  <div class="attendance-card">
+
+    <input type="text" id="rollNo" class="form-control mb-3" placeholder="Enter Roll No">
+
+    <button class="btn btn-view w-100 mb-4" onclick="loadAttendance()">
+      View Attendance
+    </button>
+
+    <!-- Student Info -->
+    <div id="studentInfo" class="student-info"></div>
+
+    <!-- Charts -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <canvas id="subjectChart" height="150"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="overallChart" height="150"></canvas>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="result"></tbody>
+    </table>
+
+  </div>
+</div>
+
+<script>
+let subjectChart, overallChart;
+
+/* Frontend student-name mapping (safe fallback) */
+const studentMap = {
+  "1": "Shiv Koli",
+  "2": "Kartiki",
+  "3": "Akanksha",
+  "4": "Tanishka"
+};
+
+function loadAttendance(){
+  const rollNo = document.getElementById("rollNo").value;
+
+  fetch(`http://localhost:8080/api/attendance/student/${rollNo}`)
+    .then(res=>res.json())
+    .then(data=>{
+      const tbody = document.getElementById("result");
+      tbody.innerHTML = "";
+
+      if(data.length === 0){
+        tbody.innerHTML = "<tr><td colspan='3'>No record found</td></tr>";
+        document.getElementById("studentInfo").innerHTML = "";
+        return;
+      }
+
+      /* Student Name */
+      const studentName = data[0].name || studentMap[rollNo] || "Student";
+      document.getElementById("studentInfo").innerHTML = `
+        <div class="attendance-percent">
+          Student Name: <span class="text-primary">${studentName}</span>
+        </div>
+      `;
+
+      let subjectStats = {};
+      let present = 0, total = 0;
+
+      data.forEach(a=>{
+        tbody.innerHTML += `
+          <tr>
+            <td>${a.subject}</td>
+            <td>${a.date}</td>
+            <td>${a.status}</td>
+          </tr>`;
+
+        total++;
+        if(a.status === "P") present++;
+
+        if(!subjectStats[a.subject]){
+          subjectStats[a.subject] = {p:0, t:0};
+        }
+        subjectStats[a.subject].t++;
+        if(a.status === "P") subjectStats[a.subject].p++;
+      });
+
+      const labels = Object.keys(subjectStats);
+      const percentages = labels.map(
+        s => Math.round((subjectStats[s].p / subjectStats[s].t) * 100)
+      );
+
+      const overallPercent = Math.round((present / total) * 100);
+
+      document.getElementById("studentInfo").innerHTML += `
+        <div class="attendance-percent mt-1">
+          Overall Attendance: 
+          <span class="${overallPercent < 75 ? 'text-danger' : 'text-success'}">
+            ${overallPercent}%
+          </span>
+        </div>
+      `;
+
+      if(subjectChart) subjectChart.destroy();
+      subjectChart = new Chart(document.getElementById("subjectChart"),{
+        type:"bar",
+        data:{
+          labels,
+          datasets:[{
+            label:"Attendance %",
+            data:percentages
+          }]
+        },
+        options:{
+          maintainAspectRatio:false
+        }
+      });
+
+      if(overallChart) overallChart.destroy();
+      overallChart = new Chart(document.getElementById("overallChart"),{
+        type:"pie",
+        data:{
+          labels:["Present","Absent"],
+          datasets:[{
+            data:[present, total-present]
+          }]
+        },
+        options:{
+          maintainAspectRatio:false
+        }
+      });
+    });
+}
+</script>
+
+</body>
+</html>

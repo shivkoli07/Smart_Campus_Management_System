@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apply Leave</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+body{
+  background: linear-gradient(135deg, #f9f7f3, #eef2f7);
+}
+
+/* Card styling */
+.leave-card{
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Header */
+.card-header-custom{
+  background: #1e3a8a;
+  color: white;
+  padding: 15px 20px;
+}
+
+/* Back button */
+.back-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Inputs */
+.form-control, .form-select{
+  border-radius: 10px;
+}
+
+/* Primary button */
+.btn-primary{
+  background: #1e3a8a;
+  border: none;
+}
+.btn-primary:hover{
+  background: #162e6b;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Back Button -->
+<div class="back-btn">
+  <button class="btn btn-outline-dark btn-sm"
+    onclick="window.location.href='leave-role.html'">
+    <i class="fa-solid fa-arrow-left me-1"></i> Back
+  </button>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="card leave-card shadow-lg mx-auto" style="max-width: 520px;">
+
+    <!-- Card Header -->
+    <div class="card-header-custom text-center">
+      <h4 class="mb-0"><i class="fa-solid fa-calendar-days me-2"></i>Apply Leave</h4>
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body p-4">
+
+      <input id="name" class="form-control mb-2" placeholder="Student Name">
+      <input id="rollNo" class="form-control mb-2" placeholder="Roll No">
+      <input id="branch" class="form-control mb-2" placeholder="Branch">
+      <input id="year" class="form-control mb-2" placeholder="Year">
+
+      <select id="leaveType" class="form-select mb-2">
+        <option value="">Select Leave Type</option>
+        <option>Medical</option>
+        <option>Personal</option>
+        <option>Emergency</option>
+      </select>
+
+      <label class="fw-semibold mt-2">From Date</label>
+      <input type="date" id="fromDate" class="form-control mb-2">
+
+      <label class="fw-semibold">To Date</label>
+      <input type="date" id="toDate" class="form-control mb-2">
+
+      <textarea id="reason" class="form-control mb-3" rows="3"
+        placeholder="Reason for leave"></textarea>
+
+      <button class="btn btn-primary w-100 mb-2" onclick="applyLeave()">
+        <i class="fa-solid fa-paper-plane me-2"></i>Submit Leave
+      </button>
+
+      <button class="btn btn-outline-secondary w-100"
+        onclick="window.location.href='view-leave-status.html'">
+        <i class="fa-solid fa-eye me-2"></i>Check Leave Status
+      </button>
+
+      <p id="msg" class="text-success mt-3 text-center fw-semibold"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function applyLeave() {
+  const data = {
+    name: document.getElementById("name").value,
+    rollNo: document.getElementById("rollNo").value,
+    branch: document.getElementById("branch").value,
+    year: document.getElementById("year").value,
+    leaveType: document.getElementById("leaveType").value,
+    fromDate: document.getElementById("fromDate").value,
+    toDate: document.getElementById("toDate").value,
+    reason: document.getElementById("reason").value
+  };
+
+  fetch("http://localhost:8080/api/leave", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(() => {
+    document.getElementById("msg").innerText = "Leave Applied Successfully!";
+  })
+  .catch(() => alert("Error applying leave"));
+}
+</script>
+
+</body>
+</html>

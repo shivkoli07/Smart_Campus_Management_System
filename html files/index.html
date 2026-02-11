@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Campus Management System</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-main:#f6f7fb;
+  --bg-glass:rgba(255,255,255,0.75);
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+  --accent:#c9a227;
+  --text-main:#1f2937;
+  --text-muted:#6b7280;
+}
+
+body{
+  background:linear-gradient(180deg,#f6f7fb,#eef1f7);
+  font-family:'Poppins',sans-serif;
+  color:var(--text-main);
+}
+
+/* NAVBAR */
+.navbar{
+  background:linear-gradient(90deg,var(--navy),var(--navy-light));
+  padding:14px 0;
+}
+
+.navbar-brand{
+  font-weight:600;
+  font-size:1.25rem;
+  letter-spacing:0.5px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  padding:80px 30px;
+  border-radius:22px;
+  margin-top:40px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  right:-20%;
+  width:350px;
+  height:350px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+}
+
+.hero h1{
+  font-weight:700;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  opacity:0.9;
+}
+
+.hero .btn{
+  margin-top:25px;
+  padding:12px 30px;
+  font-weight:500;
+  border-radius:30px;
+}
+
+/* FEATURE CARDS */
+.feature-card{
+  background:var(--bg-glass);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:35px 25px;
+  text-align:center;
+  height:100%;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:all 0.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.feature-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,transparent,var(--accent),transparent);
+  opacity:0;
+  transition:0.35s;
+}
+
+.feature-card:hover::before{
+  opacity:0.15;
+}
+
+.feature-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 25px 55px rgba(0,0,0,0.18);
+}
+
+.feature-icon{
+  width:78px;
+  height:78px;
+  margin:auto;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  margin-bottom:22px;
+  box-shadow:0 8px 20px rgba(11,28,45,0.4);
+}
+
+.feature-card h5{
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.feature-card p{
+  font-size:14px;
+  color:var(--text-muted);
+}
+
+/* FOOTER */
+footer{
+  margin-top:80px;
+  padding:25px;
+  text-align:center;
+  background:linear-gradient(90deg,var(--navy),var(--navy-light));
+  color:white;
+  border-radius:25px 25px 0 0;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand text-white" href="index.html">
+      <i class="fa-solid fa-graduation-cap me-2"></i>Smart Campus Management System
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero text-center">
+    <h1 class="mb-3">Smart Campus Management System</h1>
+    <p>
+      A modern, centralized digital platform for campus information,
+      student services, administration, and communication.
+    </p>
+    <a href="#features" class="btn btn-warning shadow">
+      Explore Features
+    </a>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="container my-5" id="features">
+  <div class="row g-4">
+
+    <!-- Feature Cards -->
+    <div class="col-md-6 col-lg-3">
+      <a href="campus info page/explore-campus.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h5>Explore Campus</h5>
+          <p>Facilities, infrastructure, services & campus environment.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="departments info page/departments.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h5>Departments</h5>
+          <p>Departments, faculty, syllabus, vision & mission.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="complaints/complaint-role.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-file-circle-exclamation"></i></div>
+          <h5>Complaint System</h5>
+          <p>File and track campus, hostel & college complaints.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="attendance/attendance-role.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-clipboard-user"></i></div>
+          <h5>Attendance</h5>
+          <p>Students view attendance, admins manage records.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="leave/leave-role.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h5>Leave Application</h5>
+          <p>Apply leave & track approval status easily.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="feedback page/feed.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-star-half-stroke"></i></div>
+          <h5>Feedback</h5>
+          <p>Rate services & suggest improvements.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="about page/about-developer.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h5>About Developer</h5>
+          <p>Know the creators behind the system.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+      <a href="about page/about-system.html" class="text-decoration-none text-dark">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-circle-info"></i></div>
+          <h5>About System</h5>
+          <p>System architecture & working details.</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Smart Campus Management System | Designed by SHIV KOLI
+</footer>
+
+
+<!-- =================== CAMPUS CHATBOT =================== -->
+<div id="chatbot-container">
+  <!-- Chat Icon -->
+  <div id="chatbot-icon">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <!-- Chat Window -->
+  <div id="chatbot-window">
+    <div class="header">
+      <span><i class="fa-solid fa-robot"></i>Campus Bot</span>
+      <span id="chatbot-close"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+
+    <div id="chat-messages"></div>
+
+    <input type="text" id="chat-input" placeholder="Ask me anything...">
+  </div>
+</div>
+
+<style>
+  :root {
+    --cream: #f9f7f3;
+    --navy: #1e3a5f;
+    --navy-dark: #0b1c2d;
+    --font-family: 'Poppins', sans-serif;
+  }
+
+  #chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: var(--font-family);
+    z-index: 999;
+  }
+
+  #chatbot-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+  #chatbot-icon:hover { transform: scale(1.1); }
+  #chatbot-icon i { color: white; font-size: 28px; }
+
+  #chatbot-window {
+    display: none; /* hidden by default */
+    width: 320px;
+    height: 400px;
+    background: var(--cream);
+    border: 1px solid var(--navy);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+    position: absolute; /* absolute so it floats above content */
+    bottom: 70px; /* above the icon */
+    right: 0;
+    overflow: hidden;
+    flex-direction: column;
+    display: flex; /* flex layout */
+  }
+
+  #chatbot-window.hidden {
+    display: none; /* class to hide */
+  }
+
+  #chatbot-window .header {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+  }
+  #chatbot-window .header span { display: flex; align-items: center; }
+  #chatbot-window .header i { margin-right: 6px; }
+  #chatbot-close { cursor: pointer; }
+
+  #chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  #chat-messages p { margin-bottom: 8px; line-height: 1.4; }
+  #chat-messages .user-msg { font-weight: 600; }
+  #chat-messages .bot-msg {
+    background: var(--cream);
+    padding: 6px 10px;
+    border-radius: 10px;
+    color: var(--navy-dark);
+  }
+
+  #chat-input {
+    border: none;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  #chat-messages::-webkit-scrollbar { width: 6px; }
+  #chat-messages::-webkit-scrollbar-thumb {
+    background: var(--navy);
+    border-radius: 3px;
+  }
+  #chat-messages::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 3px;
+  }
+</style>
+
+<script>
+  // Elements
+  const icon = document.getElementById('chatbot-icon');
+  const windowChat = document.getElementById('chatbot-window');
+  const closeBtn = document.getElementById('chatbot-close');
+  const messages = document.getElementById('chat-messages');
+  const input = document.getElementById('chat-input');
+
+  // Hide chat initially
+  windowChat.classList.add('hidden');
+
+  // Toggle chat on icon click
+  icon.addEventListener('click', () => {
+    windowChat.classList.toggle('hidden');
+  });
+
+  // Close chat on X
+  closeBtn.addEventListener('click', () => {
+    windowChat.classList.add('hidden');
+  });
+
+  // Keyword-based answers
+  const keywordAnswers = [
+    {keywords: ["hello", "hi", "hey"], answer: "Hello! How can I assist you with the Smart Campus Management System today?"},
+    {keywords: ["tell","What is", "system","about this system"], answer: "Smart Campus Management System is a centralized digital platform for campus info, services, and communication."},
+    {keywords: ["features", "services"], answer: "Our system offers Explore Campus, Departments, Complaint System, Attendance, Leave Application, Feedback, and more."},
+    {keywords: ["how", "use"], answer: "You can explore features by clicking on the cards or ask me specific questions about the system."},
+    {keywords: ["contact", "support"], answer: "For support, please contact the campus administration or visit the Help Desk."},
+    {keywords: ["update", "news"], answer: "For the latest updates and news, please check the campus notice board or our official website."},
+    {keywords: ["login", "access"], answer: "To access your account, please go to the login page and enter your credentials."},
+    {keywords: ["bye", "goodbye"], answer: "Goodbye! Have a great day! Feel free to ask if you have more questions."},
+    {keywords: ["smart campus","campus","system"], answer: "Smart Campus Management System is a centralized digital platform for campus info, services, and communication."},
+    {keywords: ["leave", "apply"], answer: "Go to the Leave Application section and submit your leave request."},
+    {keywords: ["complaint", "file"], answer: "Go to Complaint System to file and track complaints."},
+    {keywords: ["track complaint", "complaint status"], answer: "Go to Complaint System to view the status of your complaints."},
+    {keywords: ["developer","designed by","creator"], answer: "This system is developed by SHIV KOLI."},
+    {keywords: ["attendance"], answer: "Students can view attendance and admins can manage records in the Attendance section."},
+    {keywords: ["departments", "faculty"], answer: "Check Departments section for faculty, syllabus, and vision & mission."},
+    {keywords: ["feedback"], answer: "Go to Feedback section to rate services and suggest improvements."},
+    {keywords: ["structure"],answer: "click on about system to know about the architecture and working details of the system."},
+    {keywords: ["help", "assist"], answer: "I'm here to help! You can ask me about the features, how to use the system, or any specific questions you have."},
+    {keywords: ["good morning", "good afternoon", "good evening"], answer: "Good day! How can I assist you with the Smart Campus Management System?"},
+    {keywords: ["good day"], answer: "Good day! How can I assist you with the Smart Campus Management System?"},
+    {keywords: ["thanks", "thank you"], answer: "You're welcome! We hope you find the Smart Campus Management System helpful. Let us know if you have any more questions!"},
+    {keywords: ["campus facilities","explore campus"], answer: "Explore Campus section to view infrastructure, services, and student amenities."},
+    {keywords: ["about system", "architecture"], answer: "The system is built using HTML, CSS, JavaScript for frontend and a backend server to handle data and logic."},
+    {
+    keywords: ["day"], 
+    answer: `Today's day is ${new Date().toLocaleDateString('en-US', { weekday: 'long' })}.`
+},
+{
+    keywords: ["date"], 
+    answer: `Today's date is ${new Date().toLocaleDateString('en-GB')}.`
+},
+{
+    keywords: ["time"], 
+    answer: `Current time is ${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}.`
+}
+
+  ];
+
+  // Handle user input
+  input.addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+      const userText = input.value.trim();
+      if(!userText) return;
+
+      // User message
+      const pUser = document.createElement('p');
+      pUser.className = "user-msg";
+      pUser.textContent = "You: " + userText;
+      messages.appendChild(pUser);
+
+      // Bot response
+      const lowerText = userText.toLowerCase();
+      let answerText = "Sorry, I don't understand that. Please ask something else.";
+      for(const qa of keywordAnswers){
+        if(qa.keywords.some(k => lowerText.includes(k))){
+          answerText = qa.answer;
+          break;
+        }
+      }
+
+      const pBot = document.createElement('p');
+      pBot.className = "bot-msg";
+      pBot.textContent = "Bot: " + answerText;
+      messages.appendChild(pBot);
+
+      messages.scrollTop = messages.scrollHeight;
+      input.value = '';
+    }
+  });
+</script>
+
+
+</body>
+</html>

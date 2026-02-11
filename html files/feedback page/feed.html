@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feedback Page</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+  --cream:#f9f7f3;
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+  --btn-primary:#0b1c2d;
+  --btn-secondary:#f9f7f3;
+}
+
+body{
+  background: var(--cream);
+  font-family:'Segoe UI', sans-serif;
+}
+
+h3, h4, h5{
+  color: var(--navy);
+}
+
+.card-custom{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.btn-role{
+  width:160px;
+  font-weight:600;
+  border-radius:10px;
+  padding:12px 0;
+  transition:0.3s;
+  margin:10px;
+  font-size:1.1rem;
+}
+
+.btn-role-primary{
+  background: var(--navy);
+  color:white;
+  border:none;
+}
+
+.btn-role-primary:hover{
+  background: var(--navy-light);
+  transform: translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn-role-secondary{
+  background: var(--cream);
+  color: var(--navy);
+  border:2px solid var(--navy);
+}
+
+.btn-role-secondary:hover{
+  background: var(--navy);
+  color:white;
+  transform: translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.submit-btn{
+  background:var(--navy);
+  color:white;
+  font-weight:600;
+  border-radius:12px;
+  padding:10px 25px;
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+  background:var(--navy-light);
+}
+
+.table-card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.table td, .table th{
+  text-align:center;
+  vertical-align:middle;
+}
+
+.rating-option input[type="radio"]{
+  display:none;
+}
+
+.rating-option label{
+  display:inline-block;
+  background:#f0f0f0;
+  color:#333;
+  padding:8px 15px;
+  margin-right:10px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.rating-option input[type="radio"]:checked + label{
+  background: var(--navy);
+  color:white;
+}
+
+canvas{
+  max-width: 300px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+.back-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--navy);
+  color: white;
+  border:none;
+  padding:8px 15px;
+  border-radius:8px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background: var(--navy-light);
+  transform: translateY(-2px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Feedback Banner */
+.feedback-banner{
+  background: var(--navy);
+  color: white;
+  text-align:center;
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  font-size:1.3rem;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ROLE SELECTION -->
+<div class="container my-5 position-relative" id="roleSelection">
+  <a href="../index.html" class="back-btn">Back</a>
+
+  <div class="feedback-banner">We Value Your Feedback! </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h3 class="mb-4">Select Your Role</h3>
+      <button class="btn btn-role btn-role-primary" onclick="showStudentForm()">Student</button>
+      <button class="btn btn-role btn-role-secondary" onclick="showAdminLogin()">Admin</button>
+    </div>
+  </div>
+</div>
+
+<!-- STUDENT FEEDBACK FORM -->
+<div class="container my-5 d-none position-relative" id="studentForm">
+  <a href="../index.html" class="back-btn">Back</a>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card-custom">
+        <h4 class="mb-4 text-center">Submit Your Feedback</h4>
+        <form id="feedbackForm">
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Name (Optional)</label>
+            <input type="text" id="name" class="form-control" placeholder="Your name">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Rate Your Experience <span class="text-danger">*</span></label>
+            <div class="rating-option">
+              <input type="radio" name="rating" id="excellent" value="Excellent">
+              <label for="excellent">Excellent</label>
+
+              <input type="radio" name="rating" id="good" value="Good">
+              <label for="good">Good</label>
+
+              <input type="radio" name="rating" id="average" value="Average">
+              <label for="average">Average</label>
+
+              <input type="radio" name="rating" id="poor" value="Poor">
+              <label for="poor">Poor</label>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Suggestions / Comments <span class="text-danger">*</span></label>
+            <textarea id="suggestion" class="form-control" rows="4" placeholder="Write your suggestions here..."></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" id="submitBtn" class="btn submit-btn" disabled>Submit Feedback</button>
+          </div>
+        </form>
+
+        <div class="mt-4">
+          <h5 class="text-center mb-3">Feedback Distribution</h5>
+          <canvas id="feedbackChart" height="150"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN & FEEDBACK TABLE -->
+<div class="container my-5 d-none position-relative" id="adminLogin">
+  <a href="../index.html" class="back-btn">Back</a>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card-custom text-center">
+        <h4 class="mb-4">Admin Login</h4>
+        <input type="text" id="adminUser" class="form-control mb-3" placeholder="Username">
+        <input type="password" id="adminPass" class="form-control mb-3" placeholder="Password">
+        <button class="btn btn-dark px-4" onclick="loginAdmin()">Login</button>
+        <p id="loginError" class="text-danger mt-2"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center d-none" id="feedbackTableContainer">
+    <div class="col-md-10">
+      <div class="table-card mt-5">
+        <h4 class="mb-4 text-center">All User Feedback</h4>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>Suggestion</th>
+              </tr>
+            </thead>
+            <tbody id="feedbackTableBody">
+              <tr>
+                <td colspan="4" class="text-center">Loading feedback...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Show Student Form
+function showStudentForm(){
+  document.getElementById("roleSelection").classList.add("d-none");
+  document.getElementById("studentForm").classList.remove("d-none");
+}
+
+// Show Admin Login
+function showAdminLogin(){
+  document.getElementById("roleSelection").classList.add("d-none");
+  document.getElementById("adminLogin").classList.remove("d-none");
+}
+
+// Admin Login
+function loginAdmin(){
+  const user = document.getElementById("adminUser").value;
+  const pass = document.getElementById("adminPass").value;
+  const loginError = document.getElementById("loginError");
+
+  if(user === "admin" && pass === "admin123"){
+    loginError.textContent = "";
+    document.getElementById("feedbackTableContainer").classList.remove("d-none");
+    loadFeedback();
+  } else {
+    loginError.textContent = "Invalid username or password!";
+  }
+}
+
+// Load Feedback Table
+function loadFeedback(){
+  fetch("http://localhost:8080/api/feedback")
+    .then(response => response.json())
+    .then(data => {
+      const tableBody = document.getElementById("feedbackTableBody");
+      tableBody.innerHTML = "";
+      if(data.length === 0){
+        tableBody.innerHTML = `<tr><td colspan="4" class="text-center">No feedback available</td></tr>`;
+        return;
+      }
+      data.forEach((fb,index)=>{
+        tableBody.innerHTML += `<tr>
+          <td>${index+1}</td>
+          <td>${fb.name ? fb.name : "Anonymous"}</td>
+          <td>${fb.rating}</td>
+          <td>${fb.suggestion}</td>
+        </tr>`;
+      });
+    })
+    .catch(err=>{
+      document.getElementById("feedbackTableBody").innerHTML = `<tr><td colspan="4" class="text-center text-danger">Error loading feedback</td></tr>`;
+      console.error(err);
+    });
+}
+
+// Student Form Validation
+const submitBtn = document.getElementById('submitBtn');
+const suggestion = document.getElementById('suggestion');
+const ratings = document.querySelectorAll('input[name="rating"]');
+
+function validateForm(){
+  const ratingSelected = [...ratings].some(r => r.checked);
+  const suggestionFilled = suggestion.value.trim().length > 0;
+  submitBtn.disabled = !(ratingSelected && suggestionFilled);
+}
+ratings.forEach(r => r.addEventListener('change', validateForm));
+suggestion.addEventListener('input', validateForm);
+
+// Feedback Chart
+let feedbackChart;
+function loadFeedbackChart(){
+  fetch("http://localhost:8080/api/feedback")
+    .then(res => res.json())
+    .then(data => {
+      const ratingsCount = { Excellent:0, Good:0, Average:0, Poor:0 };
+      data.forEach(fb=>{
+        if(fb.rating && ratingsCount.hasOwnProperty(fb.rating)){
+          ratingsCount[fb.rating]++;
+        }
+      });
+
+      const ctx = document.getElementById("feedbackChart").getContext("2d");
+      if(feedbackChart) feedbackChart.destroy();
+
+      feedbackChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ["Excellent","Good","Average","Poor"],
+          datasets: [{
+            data: [ratingsCount.Excellent, ratingsCount.Good, ratingsCount.Average, ratingsCount.Poor],
+            backgroundColor: ['#add8e6','#ffb6c1','#90ee90','#ffe4b5']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'bottom', labels:{color: '#0b1c2d', font:{size:14}} }
+          }
+        }
+      });
+    })
+    .catch(err => console.error("Error loading feedback chart:", err));
+}
+loadFeedbackChart();
+
+// Submit Feedback
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const data = {
+    name: document.getElementById("name").value,
+    rating: document.querySelector('input[name="rating"]:checked').value,
+    suggestion: document.getElementById("suggestion").value
+  };
+  fetch("http://localhost:8080/api/feedback", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(data)
+  })
+  .then(response => { if(!response.ok) throw new Error("Failed"); return response.json(); })
+  .then(() => {
+    alert("Feedback submitted successfully!");
+    document.getElementById("feedbackForm").reset();
+    submitBtn.disabled = true;
+    loadFeedbackChart();
+  })
+  .catch(error => {
+    alert("Error submitting feedback");
+    console.error(error);
+  });
+});
+</script>
+
+</body>
+</html>

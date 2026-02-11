@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Explore Campus - BVCOE Navi Mumbai</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-main:#f5f7fb;
+  --glass-bg:rgba(255,255,255,0.75);
+  --navy:#0b1c2d;
+  --navy-light:#1e3a5f;
+  --accent:#c9a227;
+  --text-main:#1f2937;
+  --text-muted:#6b7280;
+}
+
+body{
+  background:linear-gradient(180deg,#f5f7fb,#eef2f8);
+  font-family:'Poppins',sans-serif;
+  color:var(--text-main);
+}
+
+/* NAVBAR */
+.navbar{
+  background:linear-gradient(90deg,var(--navy),var(--navy-light));
+  padding:14px 0;
+  position:relative;
+}
+
+.navbar-brand{
+  font-weight:600;
+  font-size:1.2rem;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.back-btn a{
+  background:rgba(255,255,255,0.15);
+  color:white;
+  padding:8px 16px;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.back-btn a:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* TITLES */
+.section-title{
+  font-size:30px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:25px;
+  text-align:center;
+}
+
+/* CAMPUS IMAGES */
+.campus-img{
+  width:100%;
+  height:190px;
+  object-fit:contain;
+  background:#f6f4f4; /* changed from #fff to black */
+  padding:12px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  transition:0.4s;
+}
+
+
+.campus-img:hover{
+  transform:scale(1.05);
+  box-shadow:0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* GLASS CARDS */
+.card-custom{
+  background:var(--glass-bg);
+  backdrop-filter:blur(12px);
+  border:none;
+  border-radius:18px;
+  box-shadow:0 14px 35px rgba(0,0,0,0.12);
+  transition:0.35s;
+}
+
+.card-custom:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 50px rgba(0,0,0,0.22);
+}
+
+/* ICON */
+.icon-circle{
+  width:65px;
+  height:65px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:28px;
+  box-shadow:0 8px 20px rgba(11,28,45,0.4);
+}
+
+/* LIST */
+.info-list li{
+  margin-bottom:12px;
+  color:var(--text-main);
+  font-size:15px;
+}
+
+/* TEXT */
+p{
+  line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container position-relative">
+    <a class="navbar-brand text-white" href="../index.html">
+      <i class="fa-solid fa-building-columns me-2"></i>Explore Campus
+    </a>
+
+    <!-- BACK BUTTON -->
+    <div class="back-btn">
+      <a href="../index.html">
+        <i class="fa-solid fa-arrow-left me-1"></i> Back
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="container my-4 text-center">
+  <h2 class="section-title">Bharati Vidyapeeth College of Engineering, Navi Mumbai</h2>
+  <p class="text-muted">
+    Established in 1990, BVCOE is one of the leading engineering colleges affiliated to Mumbai University and approved by AICTE.
+    The college aims for excellence in technical education and holistic student development.Bharti Vidyapeeth College of Engineering is
+     renowned for  quality education leading  new folds of technical fields. With a progressive mission of “Social Transformation 
+     through Dynamic Education”, the institute is consistently striving for the holistic development of the students. We aim at imparting
+      quality education to meet the needs of industry, profession and society; and to achieve excellence in teaching, learning and research. 
+  </p>
+</div>
+
+<!-- CAMPUS IMAGES -->
+<div class="container mb-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="../../assets/building1.jpg" alt="BVCOE Main Entrance" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/building2.jpg" alt="BVCOE Academic Block" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/building3.jpg" alt="BVCOE Campus View" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/library.jpg" alt="BVCOE Library" class="campus-img">
+  </div>
+    <div class="col-md-4">
+      <img src="../../assets/lab.jpg" alt="BVCOE Laboratory" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/lab1.jpg" alt="BVCOE Lab" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/workshop.jpg" alt="BVCOE Workshop" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/boyshostel.jpg" alt="BVCOE Boys Hostel" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/girlshostel.jpg" alt="BVCOE  Girls Hostel" class="campus-img">
+    </div>
+      <div class="col-md-4">
+      <img src="../../assets/gym.jpg" alt="BVCOE Gym" class="campus-img">
+    </div>
+      <div class="col-md-4">
+      <img src="../../assets/groupphoto1.jpg" alt="BVCOE Group Photo" class="campus-img"> 
+    </div>
+      <div class="col-md-4"> 
+      <img src="../../assets/groupphoto2.jpg" alt="BVCOE Group Photo" class="campus-img">
+    </div>
+      <div class="col-md-4">
+      <img src="../../assets/groupphoto3.jpg" alt="BVCOE Group Photo" class="campus-img">
+    </div>
+      <div class="col-md-4">
+      <img src="../../assets/groupphoto4.jpg" alt="BVCOE Group Photo" class="campus-img">
+      </div>
+      <div class="col-md-4">
+      <img src="../../assets/entrance.jpg" alt="BVCOE Entrance" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/abhiiyan.jpg" alt="BVCOE College Event" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/event.jpg" alt="BVCOE College Event" class="campus-img">
+    </div>
+    <div class="col-md-4">
+      <img src="../../assets/event2.jpg" alt="BVCOE College Event" class="campus-img">
+    </div>    
+
+</div>
+
+<!-- CAMPUS OVERVIEW -->
+<div class="container mb-5">
+  <h3 class="section-title">Campus Overview</h3>
+  <p>
+    Bharati Vidyapeeth College of Engineering (BVCOE) is spread across a modern urban campus well-connected by rail and road,
+    minutes from Kharghar Railway Station and the Sion–Panvel Highway. In a span of twenty five years the College has gained 
+    appreciation because of excellent infrastructure, well equipped laboratory facilities, enriched library, qualified faculty
+     and hence the outstanding results of students.
+  </p>
+</div>
+
+<!-- FACILITIES -->
+<div class="container mb-5">
+  <h3 class="section-title">Campus Facilities</h3>
+  <div class="row gy-4">
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-4 card-custom">
+        <div class="icon-circle mb-3"><i class="fa-solid fa-book"></i></div>
+        <h5 class="fw-bold">Library</h5>
+        <p class="text-muted">Extensive collection of books, journals, and digital resources.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-4 card-custom">
+        <div class="icon-circle mb-3"><i class="fa-solid fa-flask"></i></div>
+        <h5 class="fw-bold">Labs & Workshop</h5>
+        <p class="text-muted">Well-equipped labs for practical learning and innovation.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-4 card-custom">
+        <div class="icon-circle mb-3"><i class="fa-solid fa-utensils"></i></div>
+        <h5 class="fw-bold">Cafeteria & Mess</h5>
+        <p class="text-muted">Clean, affordable dining facilities on campus.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-4 card-custom">
+        <div class="icon-circle mb-3"><i class="fa-solid fa-wifi"></i></div>
+        <h5 class="fw-bold">Wi-Fi Campus</h5>
+        <p class="text-muted">High-speed internet access for academic use.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-4 card-custom">
+        <div class="icon-circle mb-3"><i class="fa-solid fa-dumbbell"></i></div>
+        <h5 class="fw-bold">Gym & Sports</h5>
+        <p class="text-muted">Indoor & outdoor sports facilities for students.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-4 card-custom">
+        <div class="icon-circle mb-3"><i class="fa-solid fa-house"></i></div>
+        <h5 class="fw-bold">Hostel</h5>
+        <p class="text-muted">Separate hostel facilities for boys and girls available.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- QUICK FACTS -->
+<div class="container mb-5">
+  <h3 class="section-title">Quick Facts</h3>
+  <ul class="list-unstyled info-list">
+    <li><strong>Established:</strong> 1990</li>
+    <li><strong>Affiliation:</strong> Mumbai University, AICTE</li>
+    <li><strong>Principal:</strong> Dr. Sandhya Jadhav</li>
+    <li><strong>Students:</strong> 2000+ | Staff: 140+</li>
+    <li><strong>Departments:</strong> Computer, IT, Mechanical, EXTC, Instrumentation,Chemical</li>
+    <li><strong>Location:</strong> CBD Belpada, Kharghar, Navi Mumbai</li>
+  </ul>
+</div>
+
+<!-- CONTACT -->
+<div class="container text-center mb-5">
+  <h3 class="section-title">Contact & Location</h3>
+  <p class="text-muted">
+    Bharati Vidyapeeth College of Engineering, Navi Mumbai<br>
+    Tel: <strong>022-27572140</strong><br>
+    Email: <strong>principal.bvcoenm@bharatividyapeeth.edu</strong>
+  </p>
+</div>
+
+</body>
+</html>
