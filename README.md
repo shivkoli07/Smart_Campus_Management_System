@@ -1,27 +1,142 @@
-# Smart Campus Management System
+# 🎓 Smart Campus Management System
 
-A smart web-based platform developed to manage campus activities efficiently.
+<div align="center">
 
-## Features
-- Student & Admin modules 
-- Campus, Departments Detail Pages
-- Complaint Management System
-- Attendance Management System
-- Feedback System
-- Leave Application System
-- About Developer Page for Details about the Developer
-- About System Page for complete project details
-- Secure backend integration
-- Database-driven architecture
+![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-Framework-6DB33F?style=for-the-badge&logo=springboot)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql)
+![HTML5](https://img.shields.io/badge/HTML5-Markup-E34F26?style=for-the-badge&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?style=for-the-badge&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-## Tech Stack
-- Frontend: HTML, CSS, JavaScript, Bootstrap
-- Backend: Java , Spring
-- Database: PostgreSQL
-- Tools: Git, GitHub
+### A Full-Stack Web Application for Modern Campus Administration
 
-## Project Structure
-SMART-CAMPUS-MANAGEMENT-SYSTEM
+Streamlining campus operations through a centralized digital platform for **Students** and **Administrators**.
+
+</div>
+
+---
+
+# 📖 Overview
+
+The **Smart Campus Management System** is a full-stack web application designed to digitize and simplify everyday campus operations. Instead of relying on manual paperwork and disconnected systems, the platform provides a unified solution for managing attendance, complaints, leave requests, and student feedback.
+
+The project follows a clean MVC architecture with secure backend APIs, making it scalable, maintainable, and suitable for real-world educational institutions.
+
+---
+
+# ✨ Key Features
+
+## 👨‍🎓 Student Portal
+
+- Secure Login
+- View Attendance
+- Submit Leave Requests
+- Track Leave Status
+- Submit Complaints
+- Anonymous Complaint Option
+- Track Complaint Progress
+- Submit Feedback
+- Responsive Dashboard
+
+---
+
+## 👨‍💼 Admin Portal
+
+- Dashboard Overview
+- Manage Student Attendance
+- Review Complaints
+- Resolve Complaints
+- Approve / Reject Leave Requests
+- View Student Feedback
+- Manage Campus Records
+- Centralized Administration
+
+---
+
+# 🚀 Project Objectives
+
+- Eliminate paper-based campus processes
+- Improve communication between students and administration
+- Increase transparency in complaint handling
+- Automate attendance and leave management
+- Provide a modern and user-friendly campus experience
+
+---
+
+# 🏗️ System Modules
+
+### 📌 Attendance Management
+
+- View attendance
+- Update attendance records
+- Attendance tracking
+
+---
+
+### 📌 Complaint Management
+
+- Lodge complaints
+- Anonymous complaint submission
+- Complaint status tracking
+- Complaint resolution by admin
+
+---
+
+### 📌 Leave Management
+
+- Apply for leave
+- Admin approval/rejection
+- Leave history
+
+---
+
+### 📌 Feedback Management
+
+- Submit campus feedback
+- Store responses securely
+- Admin review panel
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## Backend
+
+- Java
+- Spring Boot
+- Spring MVC
+- REST APIs
+
+---
+
+## Database
+
+- PostgreSQL
+- pgAdmin
+
+---
+
+## Development Tools
+
+- IntelliJ IDEA
+- VS Code
+- Git
+- GitHub
+- Maven
+
+---
+
+# 📂 Project Structure
 
 ```text
 │
@@ -168,174 +283,6 @@ SMART-CAMPUS-MANAGEMENT-SYSTEM
 └── README.md
 ```
 
-## Developer
-**Shiv Koli**  
-B.E. Information Technology  
-Smart Campus Management System
-# 🎓 Smart Campus Management System
-
-<div align="center">
-
-![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-Framework-6DB33F?style=for-the-badge&logo=springboot)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql)
-![HTML5](https://img.shields.io/badge/HTML5-Markup-E34F26?style=for-the-badge&logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?style=for-the-badge&logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-
-### A Full-Stack Web Application for Modern Campus Administration
-
-Streamlining campus operations through a centralized digital platform for **Students** and **Administrators**.
-
-</div>
-
----
-
-# 📖 Overview
-
-The **Smart Campus Management System** is a full-stack web application designed to digitize and simplify everyday campus operations. Instead of relying on manual paperwork and disconnected systems, the platform provides a unified solution for managing attendance, complaints, leave requests, and student feedback.
-
-The project follows a clean MVC architecture with secure backend APIs, making it scalable, maintainable, and suitable for real-world educational institutions.
-
----
-
-# ✨ Key Features
-
-## 👨‍🎓 Student Portal
-
-- Secure Login
-- View Attendance
-- Submit Leave Requests
-- Track Leave Status
-- Submit Complaints
-- Anonymous Complaint Option
-- Track Complaint Progress
-- Submit Feedback
-- Responsive Dashboard
-
----
-
-## 👨‍💼 Admin Portal
-
-- Dashboard Overview
-- Manage Student Attendance
-- Review Complaints
-- Resolve Complaints
-- Approve / Reject Leave Requests
-- View Student Feedback
-- Manage Campus Records
-- Centralized Administration
-
----
-
-# 🚀 Project Objectives
-
-- Eliminate paper-based campus processes
-- Improve communication between students and administration
-- Increase transparency in complaint handling
-- Automate attendance and leave management
-- Provide a modern and user-friendly campus experience
-
----
-
-# 🏗️ System Modules
-
-### 📌 Attendance Management
-
-- View attendance
-- Update attendance records
-- Attendance tracking
-
----
-
-### 📌 Complaint Management
-
-- Lodge complaints
-- Anonymous complaint submission
-- Complaint status tracking
-- Complaint resolution by admin
-
----
-
-### 📌 Leave Management
-
-- Apply for leave
-- Admin approval/rejection
-- Leave history
-
----
-
-### 📌 Feedback Management
-
-- Submit campus feedback
-- Store responses securely
-- Admin review panel
-
----
-
-# 🛠️ Tech Stack
-
-## Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-
----
-
-## Backend
-
-- Java
-- Spring Boot
-- Spring MVC
-- REST APIs
-
----
-
-## Database
-
-- PostgreSQL
-- pgAdmin
-
----
-
-## Development Tools
-
-- IntelliJ IDEA
-- VS Code
-- Git
-- GitHub
-- Maven
-
----
-
-# 📂 Project Structure
-
-```
-Smart_Campus_Management_System/
-│
-├── Frontend/
-│   ├── HTML
-│   ├── CSS
-│   ├── JavaScript
-│   └── Assets
-│
-├── Backend/
-│   ├── Controllers
-│   ├── Services
-│   ├── Repositories
-│   ├── Models
-│   ├── Config
-│   └── Application
-│
-├── Database/
-│   └── PostgreSQL Scripts
-│
-├── Screenshots/
-│
-└── README.md
-```
 
 ---
 
