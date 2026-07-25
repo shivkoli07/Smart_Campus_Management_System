@@ -451,7 +451,7 @@ GitHub:
 https://github.com/shivkoli07
 
 LinkedIn:
-(Add your LinkedIn URL)
+www.linkedin.com/in/shiv-koli07
 
 ---
 
@@ -473,13 +473,6 @@ This project is licensed under the MIT License.
 
 ---
 
-<div align="center">
-
-### 🌟 Building Smarter Campuses Through Technology 🌟
-
-Made with ❤️ by Shiv Koli
-
-</div>
 
 
     
